@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import { toDoList } from './toDoList';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  tasks: toDoList
 });
 
 export default rootReducer;
