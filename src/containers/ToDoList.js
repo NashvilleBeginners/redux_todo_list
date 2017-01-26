@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { ToDo } from '../components/ToDo';
+import { toggleTodo } from '../actions/index';
 
 class toDoList extends React.Component {
   renderTaskList() {
@@ -16,7 +17,10 @@ class toDoList extends React.Component {
       return (
         <div className="list-group">
           {tasks.map((task) => {
-            return <ToDo key={task.id} text={task.text}/>
+            return <ToDo
+              key={task.id}
+              text={task.text}
+              toggleTodo={this.props.toggleTodo}/>
           })}
         </div>
       )
@@ -45,9 +49,10 @@ const mapStateToProps = (state) => {
   }
 }
 
+// http://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux
 const ToDoList = connect(
   mapStateToProps,
-  null
+  { toggleTodo }
 )(toDoList)
 
 export default ToDoList

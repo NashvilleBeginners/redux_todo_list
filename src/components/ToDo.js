@@ -1,17 +1,17 @@
 import React from 'react';
+import { ToDoControl } from './ToDoControl';
 
-export const ToDo = ({text}) => {
-
+export const ToDo = (props) => {
   return(
     <div className="list-group-item">
-      {text}
+      {props.text}
       <span className="pull-right todo-controls">
-        <span className="btn btn-xs btn-primary">
-          <span className="glyphicon glyphicon-ok"></span>
-        </span>
-        <span className="btn btn-xs btn-danger">
-          <span className="glyphicon glyphicon-remove"></span>
-        </span>
+        <ToDoControl
+          symbol="ok"
+          buttonStyle="primary"/>
+        <ToDoControl
+          symbol="remove"
+          buttonStyle="danger"/>
       </span>
     </div>
   )
