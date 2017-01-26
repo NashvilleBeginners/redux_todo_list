@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { ToDo } from '../components/ToDo';
 
 class toDoList extends React.Component {
   renderTaskList() {
@@ -15,7 +16,7 @@ class toDoList extends React.Component {
       return (
         <ul className="list-group">
           {tasks.map((task) => {
-            return (<li className="list-group-item" key={task.id}>{task.text}</li>)
+            return <ToDo key={task.id} text={task.text}/>
           })}
         </ul>
       )

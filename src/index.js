@@ -5,8 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import App from './components/App';
-import ToDoList from './components/ToDoList.js'
-import NewToDo from './components/NewToDo.js'
+import ToDoList from './containers/ToDoList.js'
+import NewToDo from './containers/NewToDo.js'
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
