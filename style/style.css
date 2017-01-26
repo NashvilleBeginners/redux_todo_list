@@ -9,3 +9,15 @@
 .completed {
   text-decoration: line-through;
 }
+
+.cancel-button {
+  margin-left: 2%;
+}
+
+.form-buttons {
+  padding-top: 2%;
+}
+
+form > input {
+  min-width: 100%;
+}

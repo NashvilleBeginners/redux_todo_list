@@ -21,22 +21,23 @@ class newToDo extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="col-xs-6">
         <h1>New todo item</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input
             type="text"
+            placeholder="go to gym..."
             ref={(input) => {this.todoInput = input;}}
             autoFocus/>
-          <div>
+          <div className="form-buttons">
             <button type="submit" className="btn btn-primary">
               Add Item
             </button>
+            <Link to="/" className="btn btn-danger cancel-button">
+              Cancel
+            </Link>
           </div>
         </form>
-        <Link to="/" className="btn btn-danger">
-          Cancel
-        </Link>
       </div>
     )
   }
