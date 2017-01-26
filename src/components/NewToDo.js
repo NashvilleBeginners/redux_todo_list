@@ -1,23 +1,18 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { updateTodoText, addTodo } from '../actions/index';
+import { addTodo } from '../actions/index';
 
 class newToDo extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  handleChange(e) {
-    e.preventDefault();
-    this.props.updateTodoText(e.target.value);
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     let newTask = {
       id: Date.now(),
-      text: this.props.text
+      text: this.todoInput.value
     }
     this.props.addTodo(newTask);
     browserHistory.push("/");
@@ -28,10 +23,10 @@ class newToDo extends React.Component {
       <div>
         <h1>New todo item</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input onChange={this.handleChange.bind(this)}
-                 type="text"
-                 value={this.props.text}
-                 autoFocus/>
+          <input
+            type="text"
+            ref={(input) => {this.todoInput = input;}}
+            autoFocus/>
           <div>
             <button type="submit" className="btn btn-primary">
               Add Item
@@ -46,16 +41,9 @@ class newToDo extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    text: state.tasks.text
-  }
-}
-
 const NewToDo = connect(
-  mapStateToProps,
-  { updateTodoText,
-    addTodo }
+  null,
+  { addTodo }
 )(newToDo);
 
 export default NewToDo;
