@@ -2,7 +2,9 @@ import React from 'react';
 
 export const ToDoControl = (props) => {
   return(
-    <span className={`btn btn-xs btn-${props.buttonStyle}`}>
+    <span
+      onClick={props.handleClick.bind(this, props.todoID)}
+      className={`btn btn-xs btn-${props.buttonStyle}`}>
       <span className={`glyphicon glyphicon-${props.symbol}`}></span>
     </span>
   )

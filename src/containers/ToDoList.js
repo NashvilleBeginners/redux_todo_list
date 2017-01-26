@@ -19,7 +19,7 @@ class toDoList extends React.Component {
           {tasks.map((task) => {
             return <ToDo
               key={task.id}
-              text={task.text}
+              task={task}
               toggleTodo={this.props.toggleTodo}/>
           })}
         </div>

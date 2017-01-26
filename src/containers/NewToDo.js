@@ -12,7 +12,8 @@ class newToDo extends React.Component {
     e.preventDefault();
     let newTask = {
       id: Date.now(),
-      text: this.todoInput.value
+      text: this.todoInput.value,
+      completed: false
     }
     this.props.addTodo(newTask);
     browserHistory.push("/");
