@@ -14,11 +14,11 @@ class toDoList extends React.Component {
       )
     } else {
       return (
-        <ul className="list-group">
+        <div className="list-group">
           {tasks.map((task) => {
             return <ToDo key={task.id} text={task.text}/>
           })}
-        </ul>
+        </div>
       )
     }
   }
