@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { ToDo } from '../components/ToDo';
 import { toggleTodo } from '../actions/index';
 
+import Clicker from '../example_tests/ClickerComponent';
+
 class toDoList extends React.Component {
   renderTaskList() {
     const tasks = this.props.tasks;
@@ -34,6 +36,7 @@ class toDoList extends React.Component {
         <div>
           {this.renderTaskList()}
         </div>
+        <Clicker />
         <Link to="/newToDo" className="btn btn-primary">
           New To Do Item:
         </Link>
