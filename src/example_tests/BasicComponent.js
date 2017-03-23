@@ -1,9 +1,13 @@
 import React from 'react';
+import AnotherBasicComponent from './AnotherBasicComponent';
 
 class BasicComponent extends React.Component {
   render() {
     return(
-      <div className="greeting">Hello World</div>
+      <div>
+        <div className="greeting">Hello World</div>
+        <AnotherBasicComponent />
+      </div>
     );
   }
 }
